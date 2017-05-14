@@ -1,26 +1,41 @@
 package tr.iboss.urbaninfo.dto;
- 
-import com.fasterxml.jackson.annotation.JsonProperty;
- 
-import io.swagger.annotations.ApiModelProperty;
- 
+
 public class BuildingDto {
  
-    private final long id;
-    private final String content;
- 
-    public BuildingDto(long id, String content) {
-        this.id = id;
-        this.content = content;
-    }
- 
-    public long getId() {
-        return id;
-    }
- 
-    @JsonProperty(required = true)
-    @ApiModelProperty(notes = "The name of the user", required = true)
-    public String getContent() {
-        return content;
-    }
+    private Integer id;
+    private String number;
+    private String name;
+    private Integer parcelId;
+    private Integer roadId;
+	
+    public Integer getId() {
+		return id;
+	}
+	public void setId(Integer argId) {
+		this.id = argId;
+	}
+	public String getNumber() {
+		return this.number;
+	}
+	public void setNumber(String argNumber) {
+		this.number = argNumber;
+	}
+	public String getName() {
+		return this.name;
+	}
+	public void setName(String argName) {
+		this.name = argName;
+	}
+	public Integer getParcelId() {
+		return this.parcelId;
+	}
+	public void setParcelId(Integer argParcelId) {
+		this.parcelId = argParcelId;
+	}
+	public Integer getRoadId() {
+		return this.roadId;
+	}
+	public void setRoadId(Integer argRoadId) {
+		this.roadId = argRoadId;
+	}
 }

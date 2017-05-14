@@ -31,7 +31,7 @@ public class UrbaninfoApplication {
                 .apis(RequestHandlerSelectors.basePackage("tr"))
                 .paths(PathSelectors.any())
                 .build()
-                .pathMapping("/urbaninfo");
+                .pathMapping("/urbaninfo/v1");
     }
      
     private ApiInfo apiInfo() {
