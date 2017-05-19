@@ -16,8 +16,8 @@ public class MapService {
 	@Autowired
 	MapDao districtDao;
 	
-	public GeojsonCreator listAll() {
-		return this.createFeatureCollection(this.districtDao.getAllDistricts());
+	public GeojsonCreator listDistricts() {
+		return this.createFeatureCollection(this.districtDao.listDistricts());
 	}
 	
 	public GeojsonCreator createFeatureCollection(List<Feature> argFeatureList){

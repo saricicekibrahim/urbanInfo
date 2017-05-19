@@ -17,7 +17,7 @@ public class MapController {
  
     @ApiOperation(value = "list all districts", nickname = "list all districts")
     @RequestMapping(method = RequestMethod.GET, path="/districts", produces = "application/json")
-    public GeojsonCreator getWithLimit() {
-    	return this.buildingService.listAll();
+    public GeojsonCreator listDistricts() {
+    	return this.buildingService.listDistricts();
     }
 }

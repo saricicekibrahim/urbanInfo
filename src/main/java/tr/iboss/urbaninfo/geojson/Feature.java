@@ -8,9 +8,11 @@ public class Feature {
 	@SerializedName("type")
 	@Expose
 	private String type;
+	
 	@SerializedName("geometry")
 	@Expose
-	private String geometry;
+	private Geometry geometry;
+	
 	@SerializedName("properties")
 	@Expose
 	private Properties properties;
@@ -23,11 +25,11 @@ public class Feature {
 		this.type = type;
 	}
 
-	public String getGeometry() {
+	public Geometry getGeometry() {
 		return geometry;
 	}
 
-	public void setGeometry(String geometry) {
+	public void setGeometry(Geometry geometry) {
 		this.geometry = geometry;
 	}
 
