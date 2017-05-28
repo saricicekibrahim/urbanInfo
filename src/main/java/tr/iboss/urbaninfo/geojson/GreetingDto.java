@@ -1,4 +1,4 @@
-package tr.iboss.urbaninfo.dto;
+package tr.iboss.urbaninfo.geojson;
  
 import com.fasterxml.jackson.annotation.JsonProperty;
  

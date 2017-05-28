@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;
 import io.swagger.annotations.ApiOperation;
-import tr.iboss.urbaninfo.dto.GreetingDto;
+import tr.iboss.urbaninfo.geojson.GreetingDto;
  
 @RestController
 public class GreetingController {

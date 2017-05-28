@@ -13,11 +13,17 @@ import tr.iboss.urbaninfo.service.MapService;
 public class MapController {
 	
 	@Autowired
-	MapService buildingService;
+	MapService mapService;
  
     @ApiOperation(value = "list all districts", nickname = "list all districts")
     @RequestMapping(method = RequestMethod.GET, path="/districts", produces = "application/json")
     public GeojsonCreator listDistricts() {
-    	return this.buildingService.listDistricts();
+    	return this.mapService.listDistricts();
+    }
+    
+    @ApiOperation(value = "list all parcels", nickname = "list all parcels")
+    @RequestMapping(method = RequestMethod.GET, path="/parcels", produces = "application/json")
+    public GeojsonCreator listParcels() {
+    	return this.mapService.listParcels();
     }
 }

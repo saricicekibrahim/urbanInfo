@@ -16,14 +16,18 @@ public class MapService {
 	@Autowired
 	MapDao districtDao;
 	
-	public GeojsonCreator listDistricts() {
-		return this.createFeatureCollection(this.districtDao.listDistricts());
-	}
-	
 	public GeojsonCreator createFeatureCollection(List<Feature> argFeatureList){
 		GeojsonCreator jsonResult = new GeojsonCreator();
 		jsonResult.setFeatures(argFeatureList);
 		jsonResult.setType(MapConstants.FEATURE_COLLECTION);
 		return jsonResult;
+	}
+	
+	public GeojsonCreator listDistricts() {
+		return this.createFeatureCollection(this.districtDao.listDistricts());
+	}
+
+	public GeojsonCreator listParcels() {
+		return this.createFeatureCollection(this.districtDao.listParcels());
 	}
 }
