@@ -14,7 +14,7 @@ import tr.iboss.urbaninfo.geojson.GeojsonCreator;
 public class MapService {
 	
 	@Autowired
-	MapDao districtDao;
+	MapDao mapDao;
 	
 	public GeojsonCreator createFeatureCollection(List<Feature> argFeatureList){
 		GeojsonCreator jsonResult = new GeojsonCreator();
@@ -24,10 +24,18 @@ public class MapService {
 	}
 	
 	public GeojsonCreator listDistricts() {
-		return this.createFeatureCollection(this.districtDao.listDistricts());
+		return this.createFeatureCollection(this.mapDao.listDistricts());
 	}
 
 	public GeojsonCreator listParcels() {
-		return this.createFeatureCollection(this.districtDao.listParcels());
+		return this.createFeatureCollection(this.mapDao.listParcels());
+	}
+
+	public GeojsonCreator listPois() {
+		return this.createFeatureCollection(this.mapDao.listPois());
+	}
+
+	public GeojsonCreator listRoads() {
+		return this.createFeatureCollection(this.mapDao.listRoads());
 	}
 }

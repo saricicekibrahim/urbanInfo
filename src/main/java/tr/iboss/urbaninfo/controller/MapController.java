@@ -26,4 +26,16 @@ public class MapController {
     public GeojsonCreator listParcels() {
     	return this.mapService.listParcels();
     }
+    
+    @ApiOperation(value = "list all pois", nickname = "list all pois")
+    @RequestMapping(method = RequestMethod.GET, path="/pois", produces = "application/json")
+    public GeojsonCreator listPois() {
+    	return this.mapService.listPois();
+    }
+    
+    @ApiOperation(value = "list all roads", nickname = "list all roads")
+    @RequestMapping(method = RequestMethod.GET, path="/roads", produces = "application/json")
+    public GeojsonCreator listRoads() {
+    	return this.mapService.listRoads();
+    }
 }

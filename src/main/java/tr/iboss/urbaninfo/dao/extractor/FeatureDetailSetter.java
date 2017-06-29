@@ -12,9 +12,11 @@ import com.fasterxml.jackson.core.JsonParseException;
 import com.fasterxml.jackson.databind.JsonMappingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
+import tr.iboss.constant.MapConstants;
 import tr.iboss.urbaninfo.geojson.Geometry;
 import tr.iboss.urbaninfo.geojson.Properties;
 import tr.iboss.urbaninfo.geojson.PropertiesDefault;
+import tr.iboss.urbaninfo.geojson.PropertiesPoi;
 import tr.iboss.urbaninfo.geojson.PropertiesWithRoad;
 
 @Service
@@ -25,8 +27,8 @@ public class FeatureDetailSetter {
 	public Properties propertyDefaultSetter(ResultSet argRs) {
 		PropertiesDefault properties = new PropertiesDefault();
 		try {
-			properties.setId(argRs.getInt("id"));
-			properties.setName(argRs.getString("name"));
+			properties.setId(argRs.getInt(MapConstants.ID));
+			properties.setName(argRs.getString(MapConstants.NAME));
 		} catch (SQLException e) {
 			this.logger.error(e.getMessage());
 		}
@@ -37,9 +39,23 @@ public class FeatureDetailSetter {
 	public Properties propertyWithRoadSetter(ResultSet argRs) {
 		PropertiesWithRoad properties = new PropertiesWithRoad();
 		try {
-			properties.setId(argRs.getInt("id"));
-			properties.setName(argRs.getString("name"));
-			properties.setRoadId(argRs.getInt("road_id"));
+			properties.setId(argRs.getInt(MapConstants.ID));
+			properties.setName(argRs.getString(MapConstants.NAME));
+			properties.setRoadId(argRs.getInt(MapConstants.ROAD_ID));
+		} catch (SQLException e) {
+			this.logger.error(e.getMessage());
+		}
+
+		return properties;
+	}
+	
+	public Properties propertyPoi(ResultSet argRs) {
+		PropertiesPoi properties = new PropertiesPoi();
+		try {
+			properties.setId(argRs.getInt(MapConstants.ID));
+			properties.setName(argRs.getString(MapConstants.NAME));
+			properties.setType(argRs.getString("type"));
+			properties.setSubType(argRs.getString("subtype"));
 		} catch (SQLException e) {
 			this.logger.error(e.getMessage());
 		}
